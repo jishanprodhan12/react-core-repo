@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import User from "./User";
 export default function Users() {
     const [users, setUsers] = useState([]);
     const boxStyle = {
@@ -8,7 +8,7 @@ export default function Users() {
         width: "200px",
         textAlign: "center",
         margin: "auto auto",
-
+        minWidth: "350px"
     };
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -19,7 +19,11 @@ export default function Users() {
         <>
             <div style={boxStyle}>
                 <h2>Users : {users.length}</h2>
+                {
+                    users.map(user=> <User user={user}></User>)
+                }
             </div>
+            
         </>
     )
 }

@@ -10,20 +10,21 @@ export default function Users() {
         margin: "auto auto",
         minWidth: "350px"
     };
-    useEffect(()=>{
+    useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res=> res.json())
-        .then(data => setUsers(data))
-    },[]);
+            .then(res => res.json())
+            .then(data => setUsers(data))
+    }, []);
+
     return (
         <>
             <div style={boxStyle}>
                 <h2>Users : {users.length}</h2>
                 {
-                    users.map(user=> <User user={user}></User>)
+                    users.map(user => <User user={user}></User>)
                 }
             </div>
-            
+
         </>
     )
 }

@@ -16,6 +16,7 @@ export default function Counter() {
         setCount(count + 1);
     };
     const handleReduce = () => {
+        count <=0 && alert("count is negative now ");
         setCount(count - 1);
     }
 
